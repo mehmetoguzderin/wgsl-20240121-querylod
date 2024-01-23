@@ -1,0 +1,38 @@
+Based on:
+
+* Apple Developer Creating a Mipmapped Texture: https://developer.apple.com/documentation/metal/textures/creating_a_mipmapped_texture
+* wgpu-rs render_to_texture: https://github.com/gfx-rs/wgpu/tree/trunk/examples/src/render_to_texture
+
+Please make sure that your Python3 environment has Pillow.
+
+== Metal
+
+....
+swift main.swift
+python3 main.py output.metal.bin 256 510
+....
+
+Sample output from Apple M1:
+
+....
+Pixel value at (256, 510): (3.3203125, 3.3203125, 2.5, 1.0)
+....
+
+== wgpu-rs for Vulkan
+
+....
+cargo run
+python3 main.py output.vulkan.bin 256 510
+....
+
+Sample output from NVIDIA GeForce RTX 4060 Laptop GPU:
+
+....
+Pixel value at (256, 510): (3.32421875, 3.32421875, 2.5, 1.0)
+....
+
+Sample output from Apple M1:
+
+....
+Pixel value at (256, 510): (3.3203125, 3.3203125, 2.5, 1.0)
+....

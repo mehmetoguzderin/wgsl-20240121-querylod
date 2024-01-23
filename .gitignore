@@ -1,0 +1,12 @@
+/target
+/.vscode
+*.bin
+!output.metal.bin
+!output.vulkan.bin
+!output.vulkan.m1.bin
+*.png
+!output.metal.png
+!output.vulkan.png
+!output.vulkan.m1.png
+*.tif
+*.tiff

@@ -1,0 +1,22 @@
+[package]
+name = "wgsl-20240121-querylod"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "main"
+path = "main.rs"
+
+[dependencies]
+flume = "0.11.0"
+image = "0.24.8"
+png = "0.17.11"
+pollster = "0.3.0"
+shaderc = "0.8.3"
+wgpu = { version = "0.19.1", features = ["spirv"] }
+
+[target.'cfg(target_os = "macos")'.dependencies]
+wgpu = { version = "0.19.1", features = ["spirv", "vulkan-portability"] }
+
+# [patch.crates-io]
+# naga = { path = "./wgpu/naga" }
